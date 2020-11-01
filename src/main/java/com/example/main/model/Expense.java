@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,6 +32,7 @@ public class Expense {
 	@ManyToOne
 	private Category category;
 
+	@JsonIgnore  // it will make sure that user data is not shown
 	@ManyToOne
 	private User user;
 }
